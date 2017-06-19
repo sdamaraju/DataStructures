@@ -7,7 +7,7 @@ package Game;
 import java.util.HashMap;
 import java.util.List;
 
-public class BaseCards {
+public class BaseCards implements Cards{
 	private int minIntValue = 2;
 	private int maxIntValue = 10;
 	private int minCharacterIntValue = 11;
@@ -24,36 +24,38 @@ public class BaseCards {
 		map.put("A", 14);
 	}
 	
-	int getMinOfAll(){
+	public int getMinOfAll(){
 		int minInt = minIntValue ; int minChar = minCharacterIntValue;
 		return minInt < minChar ? minInt : minChar;
 	}
 	
-	int getMaxOfAll(){
+	public int getMaxOfAll(){
 		int maxInt = maxIntValue ; int maxChar = maxCharacterIntValue;
 		return maxInt > maxChar ? maxInt : maxChar;
 	}
 	
-	int getCardsPerSuite(){
+	public int getCardsPerSuite(){
 		return totalCardsPerDeck/totalSuites;
 	}
 	
-	int getTotalSuites(){
+	public int getTotalSuites(){
 		return totalSuites;
 	}
 	
-	int getTotalCardsPerDeck(){
+	public int getTotalCardsPerDeck(){
 		return totalCardsPerDeck;
 	}
+	
 	BaseCards(){
 		initStringToIntegerMap();
 	}
 	
 	public List generateListOfCards(List list,int numberOfDecks){ 
 		for(int j=0;j<numberOfDecks;j++){
-			for(int i=0 ;i< this.getCardsPerSuite();i++){
-				for(int k=0;k<this.getTotalSuites();k++)
-					list.add(k+2);
+			for(int k=0;k<this.getTotalSuites();k++){
+				for(int i=0 ;i< this.getCardsPerSuite();i++){
+						list.add(i+2);
+				}
 			}
 		}	
 		return list;

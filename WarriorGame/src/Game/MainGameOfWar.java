@@ -10,7 +10,7 @@ public class MainGameOfWar {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		BaseCards cards = new BaseCards();
+		Cards cards = new BaseCards();
 		System.out.println("Enter number of Decks being used : ");
 		int numberOfDecks = scan.nextInt();
 		System.out.println("Enter number of Players : ");

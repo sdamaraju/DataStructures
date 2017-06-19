@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class WarGame {
 
-	public Player playGame(Player p[],List cardsOnTable,BaseCards cards,int numberOfDecks){
+	public Player playGame(Player p[],List cardsOnTable,Cards cards,int numberOfDecks){
 		int playersOut = 0;
 		int round = 0;
 		Scanner scan = new Scanner(System.in); // use for every round check (scan.nextInt does that for us)

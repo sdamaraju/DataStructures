@@ -16,7 +16,7 @@ public class CardsDistributor {
 		list = new ArrayList();
 	}
 	
-	 List randomDistribution(Player p[],int numberOfDecks,BaseCards cards){
+	 List randomDistribution(Player p[],int numberOfDecks,Cards cards){
 		ArrayList shuffledCards = shuffleCards(cards,numberOfDecks);
 		ArrayList listOfCardsOnTableAfterEqualDistribution = new ArrayList();
 		int totalCards = (numberOfDecks* cards.getTotalCardsPerDeck());
@@ -34,7 +34,7 @@ public class CardsDistributor {
 		
 	}
 	
-	private ArrayList shuffleCards(BaseCards cards, int numberOfDecks){ // get all cards per suite and then iterate it for the number of suites and then add them to list of cards. 
+	private ArrayList shuffleCards(Cards cards, int numberOfDecks){ // get all cards per suite and then iterate it for the number of suites and then add them to list of cards. 
 		list = (ArrayList) cards.generateListOfCards(list,numberOfDecks);
 		Collections.shuffle(list); // shuffle the list of cards
 		return list;
